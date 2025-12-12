@@ -1,8 +1,9 @@
 import "./App.css";
+import { Axios } from "./components/axios/page";
 import { WeatherComponent } from "./components/context/WeatherComponent";
 
 function App() {
-  return <WeatherComponent />;
+  return <Axios />;
 }
 
 export default App;

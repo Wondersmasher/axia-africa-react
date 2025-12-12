@@ -11,7 +11,7 @@ const Component2 = () => {
   // window size here
 
   const [windowSize] = useWindowSize();
-  console.log("window size", windowSize);
+  console.log("windlow size", windowSize);
   return <div></div>;
 };
 const Component3 = () => {
