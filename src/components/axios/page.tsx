@@ -38,11 +38,11 @@ const Axios = ({}: Props) => {
   };
   const updateUser = async () => {
     try {
-      const response = await api.put<{ isAvailable: boolean }>(`/users/55`, {
+      const response = await api.put(`/users/55`, {
         name: "Akinniyi Ezekiel",
         email: "testing@gmail.com",
       });
-      console.log(response.data.isAvailable, "response from async");
+      console.log(response.data, "response from async");
     } catch (err) {
       console.log(err);
     }
@@ -50,14 +50,14 @@ const Axios = ({}: Props) => {
 
   const isUserAvailable = async (email: string) => {
     try {
-      const response = await api.post(
+      const response = await api.post<{ isAvailable: boolean }>(
         `/users/is-available
 `,
         {
-          email,
+          email, // email:email
         }
       );
-      console.log(response.data, "is user available");
+      console.log(response.data.isAvailable, "is user available");
     } catch (err) {
       console.log(err);
     }
